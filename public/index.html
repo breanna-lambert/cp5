@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css"/>
+    <title>Bloggish</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Bloggish:</h1>
+      <h3>write to your heart's content.</h3>
+      <p v-show="blogPosts.length === 0">Write a post to get started!</p>
+      
+      <form v-on:submit.prevent="addBlogPost">
+        <textarea v-focus v-model="text" placeholder="write post here"></textarea> 
+        <br>
+      	<button type="submit">publish post</button>
+      </form>
+
+      <div id="blogList">
+        <div v-for="blogPost in blogPosts.data" v-bind:class="{important:blogPost.important === '1', blogEntry:blogPost.important === '0'}">
+          <pre>{{ blogPost.text }}</pre>
+          <br>
+          <button class="deletebutton" v-on:click="deleteBlogPost(blogPost)" class="options">delete this post</button>
+          <button v-on:click="toggleImportance(blogPost)" class="options">toggle importance</button>
+        </div>
+      </div>
+
+    </div>
+
+    <h4 class="footer"><a href="https://github.com/breanna-lambert/cp5">GITHUB</a></h4>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js" integrity="sha256-pU9euBaEcVl8Gtg+FRYCtin2vKLN8sx5/4npZDmY2VA=" crossorigin="anonymous"></script>
+    <script src="/script.js"></script>
+  </body>
+</html>

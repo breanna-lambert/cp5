@@ -1,0 +1,28 @@
+{
+  "name": "cp4",
+  "version": "1.0.0",
+  "description": "node creative project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/breanna-lambert/cp4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/breanna-lambert/cp4/issues"
+  },
+  "homepage": "https://github.com/breanna-lambert/cp4#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "knex": "^0.14.6",
+    "mariasql": "^0.2.6",
+    "moment": "^2.22.1",
+    "vuex": "^3.0.1"
+  }
+}
